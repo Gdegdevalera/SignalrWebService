@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AngularJS - SignalR - ServiceDashboard</title>
+     <link rel="stylesheet" href="Content/epoch.min.css" />
+    <link rel="stylesheet" href="Content/bootstrap.min.css" />
+
+    <!-- MetisMenu CSS -->
+    <!-- Timeline CSS -->
+    <link href="Content/timeline.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="Content/sb-admin-2.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/bootstrap.metismenu/1.1.0/css/metismenu.min.css">
+    <!-- Morris Charts CSS -->
+    <link href="Content/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="Content/app.css" rel="stylesheet">
+
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.1.2.min.js"></script>
+
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/d3.min.js"></script>
+    <script src="Scripts/epoch.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="Scripts/metisMenu.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="Scripts/raphael.min.js"></script>
+    <script src="Scripts/morris.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="Scripts/sb-admin-2.js"></script>
+
+    <script src="Scripts/plugin.js"></script>
+	
+	<script src="libs/es6-shim.min.js"></script>
+	<script src="libs/system-polyfills.js"></script>
+	<script src="libs/shims_for_IE.js"></script>
+	<script src="libs/angular2-polyfills.js"></script>
+	<script src="libs/system.js"></script>
+	<script src="libs/rx.js"></script>
+	<script src="libs/angular2.dev.js"></script>
+	
+	<script>
+      System.config({
+        packages: {
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/boot')
+            .then(null, console.error.bind(console));
+	</script>
+
+</head>
+<body>
+<div class="menu">
+    <div class="sidebar-nav ">
+        <ul class="nav" id="side-menu">
+            <li class="heading">
+                <a href="index.html"> AngularJs Client</a>
+            </li>
+            <li>
+                <a class="active" href="index.html"><i class="ion ion-speedometer"></i> Dashboard<span class="ion ion-ios7-arrow-right pull-right"></span></a>
+            </li>
+            <li>
+                <a href="#"><i class="ion ion-stats-bars"></i> Logging<span class="ion ion-ios7-arrow-right pull-right"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="#">Realtime Heartbeat</a>
+                    </li>
+                    <li>
+                        <a href="#">Communicate</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a href="#"><i class="ion ion-fork-repo"></i> Libraries Used<span class="ion ion-ios7-arrow-right pull-right"></span></a>
+                <ul class="nav nav-second-level">
+                    <li class="dropdown-header">Core</li>
+                    <li><a href="http://signalr.net/">SignalR</a></li>
+                    <li><a href="https://angularjs.org/">Angular.js</a></li>
+                    <li><a href="http://jquery.com/">jQuery</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Charting</li>
+                    <li><a href="http://d3js.org/">D3.js</a></li>
+                    <li><a href="http://fastly.github.io/epoch/">Epoch.js</a></li>
+                    <li><a href="https://github.com/dainbrump/ng-epoch">Ng-Epoch</a></li>
+                    <li class="dropdown-header">UI</li>
+                    <li><a href="#">Custom UI design by Anton Bacaj</a></li>
+                    <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+                    <li><a href="http://bootswatch.com/cyborg/">Boostwatch</a></li>
+                    <li><a href="http://bootswatch.com/cyborg/">SbAdmin</a></li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a href="#"><i class="ion ion-home"></i> Author <span class="ion ion-ios7-arrow-right pull-right"></span></a>
+                <ul class="nav nav-second-level">
+                    <li><a href="http://coding.fitness">Coding.fitness</a></li>
+                    <li><a href="http://louiebacaj.com">LouieBacaj.com</a></li>
+                    <li><a href="http://codingfitness.com">Codingfitness.com</a></li>
+                    <li class="divider"></li>
+                    <li><a href="http://sitepoint.com">Sitepoint.com</a></li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>
+
+    <div id="wrapper" class="inner-wrapper">
+    <div class="mobile-nav">
+
+        <ul>
+            <li><a id="outside" class="open-menu" href="#"><i class="ion ion-grid"></i></a>
+            </li>
+            <li><a href="#">coding.fitness / louiebacaj.com</a>
+            </li>
+        </ul>
+
+    </div>
+        <div id="page-wrapper">
+            <PerformanceData></PerformanceData>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+<script src="http://cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
+<script src="Scripts/plugin.js"></script>
+</body>
+</html>

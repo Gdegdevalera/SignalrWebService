@@ -1,0 +1,201 @@
+<div class="row">
+	<div class="col-lg-3 col-md-6">
+		<div class="panel panel-dashboard">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<div class="controls left"><i class="ion ion-more"></i></div>
+						<div class="controls right"><a class="remove"><i class="ion ion-minus-round"></i></a></div>
+						<div class="center">Memory Performance</div>
+					</div>
+				</div>
+			</div>
+				<div class="panel-body">
+					<div class="huge">{{currentRamNumber}}</div>
+					<a href="#"><span>View Details</span></a>
+					<div class="clearfix"></div>
+				</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6">
+		<div class="panel panel-dashboard">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<div class="controls left"><i class="ion ion-more"></i></div>
+						<div class="controls right"><a class="remove"><i class="ion ion-minus-round"></i></a></div>
+						<div class="center">Network In K/B </div>
+					</div>
+				</div>
+			</div>
+				<div class="panel-body">
+					<div class="huge">{{netInData}}</div>
+					<a href="#"><span>View Details</span></a>
+						<div class="clearfix"></div>
+					</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6">
+		<div class="panel panel-dashboard">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<div class="controls left"><i class="ion ion-more"></i></div>
+						<div class="controls right"><a class="remove"><i class="ion ion-minus-round"></i></a></div>
+						<div class="center">Network Out K/B</div>
+					</div>
+				</div>
+			</div>
+				<div class="panel-body">
+					<div class="huge">{{netOutData}}</div>
+					<a href="#"><span>View Details</span></a>
+						<div class="clearfix"></div>
+</div>
+		   
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6">
+		<div class="panel panel-dashboard">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<div class="controls left"><i class="ion ion-more"></i></div>
+						<div class="controls right"><a class="remove"><i class="ion ion-minus-round"></i></a></div>
+						<div class="center">Disk </div>
+					</div>
+				</div>
+			</div>
+				<div class="panel-body">
+
+					<div class="huge">{{diskReaddData}}</div>
+					<a href="#"><span>View Details</span></a>
+						<div class="clearfix"></div>
+</div>
+		   
+		</div>
+	</div>
+</div>
+<!-- /.row -->
+
+<!-- /.row -->
+<div class="row">
+	<div class="col-lg-8">
+		<div class="panel panel-dashboard">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<div class="controls left"><i class="ion ion-more"></i></div>
+						<div class="controls right"><a class="remove"><i class="ion ion-minus-round"></i></a></div>
+						<div class="center">Memory/CPU/Network </div>
+					</div>
+				</div>
+			</div>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<div id="epochArea" class="epoch category10" style="height: 200px;"></div>
+			</div>
+
+			<!-- /.panel-body -->
+		</div>
+		<!-- /.panel -->
+		<div class="panel panel-dashboard">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<div class="controls left"><i class="ion ion-more"></i></div>
+						<div class="controls right"><a class="remove"><i class="ion ion-minus-round"></i></a></div>
+						<div class="center">NETWORK/MEMORY/CPU </div>
+					</div>
+				</div>
+
+			</div>
+			<div class="panel-body">
+				<div>
+					<div id="epochBar" class="epoch category10" style="height: 200px;"></div>
+				</div>
+			</div>
+			<!-- /.panel-body -->
+		</div>
+		<!-- /.panel -->
+		<div class="panel panel-dashboard">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<div class="huge">{{currentRamNumber}}</div>
+						<div class="controls left"><i class="ion ion-more"></i></div>
+						<div class="controls right"><a class="remove"><i class="ion ion-minus-round"></i></a></div>
+						<div class="center">Responsive Timeline</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<div>
+					<div>
+						<div id="epochLine" class="epoch category10" style="height: 200px;"></div>
+					</div>
+				</div>
+			</div>
+			<!-- /.panel-body -->
+		</div>
+		<!-- /.panel -->
+		<!-- /.col-lg-8 -->
+	</div>
+	<!-- /.col-lg-8 -->
+	<div class="col-lg-4">
+		<div class="panel panel-dashboard">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<div class="huge">{{currentRamNumber}}</div>
+						<div class="controls left"><i class="ion ion-more"></i></div>
+						<div class="controls right"><a class="remove"><i class="ion ion-minus-round "></i></a></div>
+						<div class="center">CPU Performance</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel-body">
+				<div>
+					<pie-chart data="{{data}}" options="{{options}}"></pie-chart>
+				</div>
+			</div>
+			<!-- /.panel-body -->
+		</div>
+		<div class="panel panel-dashboard">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<div class="controls left"><i class="ion ion-more"></i></div>
+						<div class="controls right"><a class="remove"><i class="ion ion-minus-round"></i></a></div>
+						<div class="center">Notifications Panel</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<div class="list-group" ng-controller="ServerTimeController">
+					<a href="#" class="list-group-item">
+						<i class="fa fa-comment fa-fw"></i> Server Time
+						<span class="pull-right text-muted small">
+							<em>{{currentServerTime}}</em>
+						</span>
+					</a>
+					<a href="#" class="list-group-item">
+						<i class="fa fa-warning fa-fw"></i> Server Not Responding
+						<span class="pull-right text-muted small">
+							<em>10:57 AM  {{currentServerTimeManually}}</em>
+						</span>
+					</a>
+				</div>
+				<!-- /.list-group -->
+				<button ng-click="getServerTime()" class="btn btn-default btn-block">Get Manual Time</button>
+			</div>
+			<!-- /.panel-body -->
+		</div>
+		<!-- /.panel -->
+
+	</div>
+	<!-- /.col-lg-4 -->
+</div>
+<!-- /.row -->
